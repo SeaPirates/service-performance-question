@@ -14,6 +14,10 @@ class Desempenho
 {
     public function gerarCalculo(array $dataDb): float
     {
-        return 0;
+        if ($dataDb['quant_questoes'] == 0) {
+            return 0;
+        }
+
+        return ((int) $dataDb['quant_questoes'] / (int) $dataDb['quant_acertos']) * 100;
     }
 }
