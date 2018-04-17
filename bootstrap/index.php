@@ -10,7 +10,7 @@ $params = file_get_contents("php://input");
 try {
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $metricas = new \App\Metricas();
-        echo json_encode($metricas->get(json_decode($params, true)['params']));
+        echo json_encode($metricas->get(json_decode($params, true)));
     } else {
         throw new \Exception("Requisições diferentes de POST não permitida", -500);
     }
